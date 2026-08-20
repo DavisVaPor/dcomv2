@@ -8,7 +8,7 @@
         <h1>TABLERO DE CONTROL</h1>
     </div>
     <div class="flex flex-wrap mt-4">
-        <div class=" w-1/2 grid grid-cols-12 col-span-12 gap-6 xxl:col-span-9">
+        <div class=" w-full grid grid-cols-12 col-span-12 gap-6 xxl:col-span-9">
             <div class="col-span-12 mt-6">
                 <div class="grid grid-cols-12 gap-6 mt-5">
                     <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
@@ -146,8 +146,8 @@
             </div>
         </div>
 
-        <div id="mi_mapa" class="w-1/2 mt-5 h-96">
-        </div>
+       {{--  <div id="mi_mapa" class="w-1/2 mt-5 h-96">
+        </div> --}}
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>

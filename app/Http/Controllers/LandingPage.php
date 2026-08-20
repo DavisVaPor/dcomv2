@@ -20,11 +20,16 @@ class LandingPage extends Controller
 
        $estationhfDef = Station::where('sistema','LIKE','HF')->where('estado','LIKE','OPERATIVO')->get();
 
-       $estationvhfDef = 100 * ($estationvhfDef->count()/$estationsvhf->count());
+    //    $estationvhfDef = 100 * ($estationvhfDef->count()/$estationsvhf->count());
+
+       $estationvhfDef = $estationsvhf->count() > 0  ? 100 * ($estationvhfDef->count() / $estationsvhf->count()) : 0;
+
 
        $estationvhfDef = number_format($estationvhfDef,2);
 
-       $estationhfDef = 100 * ($estationhfDef->count()/$estationshf->count());
+    //    $estationhfDef = 100 * ($estationhfDef->count()/$estationshf->count());
+
+         $estationhfDef = $estationshf->count() > 0  ? 100 * ($estationhfDef->count() / $estationshf->count()) : 0;
 
        $estationhfDef = number_format($estationhfDef,2);
 
