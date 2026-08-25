@@ -16,7 +16,6 @@
     <!-- Styles -->
     <link href="css/tailwind2.css" rel="stylesheet" type="text/css">
 
-
     <style>
         footer {
             position: fixed;
@@ -55,19 +54,24 @@
             </p>
 
             <h2>
-                <span>{{$ballot->commission->comision}}</span>
+                <span>{{ $ballot->commission->comision }}</span>
             </h2>
 
             <h2>
-                Tipo: {{$ballot->commission->tipo}}
+                Tipo: {{ $ballot->commission->tipo }}
+            </h2>
+
+            <h2>
+                <span>{{ $ballot->commission->users }}</span>
             </h2>
 
             <h3>
-                Fecha de Incio : {{$ballot->commission->fecha_inicio}}
+                Fecha de Incio : {{ $ballot->commission->fecha_inicio }}
             </h3>
             <h3>
-                Fecha de Fin : {{$ballot->commission->fecha_fin}}
+                Fecha de Fin : {{ $ballot->commission->fecha_fin }}
             </h3>
+
             <table class="rounded-t-lg mt-6 w-full bg-gray-500 text-gray-800">
                 <thead class="text-sm">
                     <tr class="border-b-2 border-gray-500 text-center">
@@ -94,7 +98,16 @@
 
             </table>
 
-            <p class="text-sm float-end mt-4">Registros: <span class="font-bold">{{$ballot->count()}}</span></p>
+            <p class="text-sm float-end mt-4">Registros: <span class="font-bold">{{ $ballot->count() }}</span></p>
+
+            <table style="width: 100%; margin-top: 40px;">
+                <tr>
+                    <td style="text-align: left;">Entregue conforme</td>
+                    <td style="text-align: right;">Recibí conforme</td>
+                </tr>
+            </table>
+
+
 
             <footer class="">
                 <p class="text-xs"> Dirección de Comunicaciones Amazonas &copy; {{ date('Y') }} <br>
