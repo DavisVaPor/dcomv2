@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -17,6 +18,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
         });
+
+         // Insertar datos iniciales
+        DB::table('systems')->insert([
+        ['name' => 'SISTEMA DE RECEPCION'],
+        ['name' => 'SISTEMA DE TRANSMISION TV'],
+        ['name' => 'SISTEMA DE TRANSMISION RADIO'],
+        ['name' => 'TORRE'],
+        ['name' => 'SISTEMA PAT'],
+        ['name' => 'SISTEMA FOTOVOLTAICO']]);
     }
 
     /**
