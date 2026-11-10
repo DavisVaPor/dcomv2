@@ -11,8 +11,8 @@ class StationController extends Controller
         return view('backend.estaciones');
     }
 
-    public function show(Station $estation){ 
-        return  view('backend.estacion',compact('estation'));
+    public function show(Station $estation){   
+    return  view('backend.estacion',compact('estation'));
     }
 
 }

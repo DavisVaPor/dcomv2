@@ -195,8 +195,8 @@
             {{ __('Cancel') }}
         </x-secondary-button>
 
-        <x-button class="ml-2" wire:click="saveStation()" wire:loading.attr="disabled">
-            {{ __('Guardar') }}
+        <x-button class="ml-2" wire:click="updateStation()" wire:loading.attr="disabled">
+            {{ __('Actualizar') }}
         </x-button>
     </x-slot>
 </x-dialog-modal>

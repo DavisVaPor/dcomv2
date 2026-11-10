@@ -10,7 +10,6 @@
 
     @livewire('station.edit', ['estation' => $estation], key($estation->id))
     
-
     <div class="flex">
         <div class="tab-content mb-2 w-7/12">
             <div class="pb-2 ">

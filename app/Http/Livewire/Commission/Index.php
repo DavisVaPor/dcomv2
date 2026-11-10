@@ -35,12 +35,14 @@ class Index extends Component
         'fechafin' => 'required|date|after_or_equal:fechainicio',
     ];
 
-    protected $listeners = ['objAttach' => 'render',
-                            'objDetach' => 'render',];
+    protected $listeners = [
+        'objAttach' => 'render',
+        'objDetach' => 'render',
+    ];
 
 
     public function render()
-    {   
+    {
         $this->fechaActual = date('Y-m-d');
 
         $commissions = Commission::where('comision', 'LIKE', '%' . $this->search . '%')
@@ -52,7 +54,7 @@ class Index extends Component
             ->latest('id')
             ->paginate(15);
 
-        return view('livewire.commission.index',[
+        return view('livewire.commission.index', [
             'commissions' => $commissions,
         ]);
     }
@@ -75,12 +77,12 @@ class Index extends Component
         $ultimo = Commission::latest()->first();
 
         if ($ultimo) {
-           if (strftime('%Y', strtotime($ultimo->fecha_inicio)) != strftime('%Y', strtotime($this->fechainicio))) {
-            $num = 0;
+            if (strftime('%Y', strtotime($ultimo->fecha_inicio)) != strftime('%Y', strtotime($this->fechainicio))) {
+                $num = 0;
             } else {
                 $num =  $ultimo->numero + 1;
             }
-        }else{
+        } else {
             $num = 0;
         }
 
@@ -112,12 +114,12 @@ class Index extends Component
 
             $this->modalAdd = false;
         } else {
-            $numeroslug = $num+1;
-            $slug = $this->nameCommision.$this->fechafin.$numeroslug;
+            $numeroslug = $num + 1;
+            $slug = $this->nameCommision . $this->fechafin . $numeroslug;
 
             $comi  = Commission::create([
                 'comision' => Str::upper($this->nameCommision),
-                'slug' => Str::slug($slug,'-'),
+                'slug' => Str::slug($slug, '-'),
                 'numero' => $num + 1,
                 'tipo' => $this->tipo,
                 'fecha_inicio' => $this->fechainicio,
@@ -145,7 +147,7 @@ class Index extends Component
                     'objetivo' => 'CUMPLIR CON LA PROMOCION Y SENSIBILIZACION EN MATERIA DE LAS TELECOMUNICACIONES'
                 ]);
             }
-            
+
             return redirect()->route('commision.show', $comi->slug);
         }
         $this->modalAdd = false;
@@ -169,5 +171,11 @@ class Index extends Component
         $this->tipo =  $this->commission->tipo;
         $this->fechainicio =  $this->commission->fecha_inicio;
         $this->fechafin =   $this->commission->fecha_fin;
+    }
+
+    public function hydrate()
+    {
+        $this->resetErrorBag();
+        $this->resetValidation();
     }
 }

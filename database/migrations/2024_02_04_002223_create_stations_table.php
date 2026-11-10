@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('codestation')->nullable();
-            $table->enum('tipoPy',['PACC','CPACC','Radio_HF'])->nullable();
+            $table->enum('tipoPy',['PACC','CPACC','Radio_HF','Radio_HF'])->nullable();
             $table->string('latitud',25);
             $table->string('longitud',25);
             $table->string('altitud',10)->nullable();

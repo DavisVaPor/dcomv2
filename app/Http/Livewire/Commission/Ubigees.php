@@ -74,4 +74,10 @@ class Ubigees extends Component
     {
         $this->modalDel = $id;
     }
+
+    public function hydrate()
+    {
+        $this->resetErrorBag();
+        $this->resetValidation();
+    }
 }

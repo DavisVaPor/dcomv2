@@ -97,4 +97,10 @@ class Index extends Component
         }
         $this->modal = false;
     }
+
+       public function hydrate()
+    {
+        $this->resetErrorBag();
+        $this->resetValidation();
+    }
 }

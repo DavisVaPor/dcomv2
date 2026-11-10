@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="text-center text-3xl my-2 font-bold text-green-600">
-        <h1>Inventario de Equipos de la Direccion de Comunicaciones</h1>
+        <h1 class="uppercase">Inventario de Equipos de la Dirección de Comunicaciones</h1>
     </div>
 
     @livewire('good.index')

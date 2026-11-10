@@ -15,7 +15,6 @@ class Mantenimient extends Component
         $this->informe = $informe;
     }
     
-    
     public function render()
     {
         $estations = Station::where('name', 'LIKE',$this->searchEstation.'%' )

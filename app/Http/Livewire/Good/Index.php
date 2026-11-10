@@ -45,7 +45,6 @@ class Index extends Component
         $this->goods = Good::where('denominacion','LIKE','%'.$this->search.'%')
                 ->where('serie','LIKE','%'.$this->sserie.'%')
                 ->where('codPatrimonio','LIKE','%'.$this->spatrimonio.'%')
-                ->where('station_id','LIKE',$this->estation)
                 ->latest('denominacion')->get();
         //$this->goods = Good::whereNull('station_id')->get();
    
@@ -96,7 +95,6 @@ class Index extends Component
     {
         $this->article = $article;
         $this->modalAdd = true;
-
     }
 
     public function hydrate()

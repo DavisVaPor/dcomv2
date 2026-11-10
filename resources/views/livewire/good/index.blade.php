@@ -2,6 +2,14 @@
     <div class="flex my-3 w-full">
         <input wire:model='search' class="form-control rounded-lg mr-2 mr-sm-2 w-5/6 px-2 " type="search"
             placeholder="Búsqueda" aria-label="Search">
+        <select class="rounded-lg mx-2 text-sm" wire:model='category' name="" id="" name=""
+            id="">
+            <option value="">Todos</option>
+            if ($categories)
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+        </select>
         <div class="justify-end mr-auto">
             <x-button wire:click="add" class="bg-green-500">
                 Añadir
@@ -21,7 +29,16 @@
             placeholder="Codigo Patrimonial" aria-label="Search">
         <input wire:model='sserie' class="form-control rounded-lg mr-sm-2 mr-2 w-2/6 px-2 " type="search"
             placeholder="Serie" aria-label="Search">
-        <div class="">
+        <input wire:model='modelo' class="form-control rounded-lg mr-sm-2 mr-2 w-2/6 px-2 " type="search"
+            placeholder="Modelo" aria-label="Search">
+
+        <select class="rounded-lg mx-2 text-sm" wire:model='category' name="" id="" name=""
+            id="">
+            <option value="">Todos</option>
+            <option value="">OPERATIVO</option>
+            <option value="">INOPERATIVO</option>
+        </select>
+        {{-- <div class="">
             <select class="rounded-lg mx-2" wire:model='estation' name="" id="">
                 <option selected value="*">Todos</option>
                 @if ($stations)
@@ -29,8 +46,8 @@
                         <option value="{{ $station->id }}">{{ $station->name }}</option>
                     @endforeach
                 @endif
-            </select>
-        </div>
+            </select>s
+        </div> --}}
 
     </div>
 
